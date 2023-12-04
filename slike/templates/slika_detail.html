@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block static %}
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/slika-detail.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}
+    {{ slika.title }}
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="pocetna">{{ slika.title }}</h1>
+
+    <section class="sekcija">
+
+        <h2>ovo je slika detalji</h2>
+
+    </section>
+
+{% endblock %}

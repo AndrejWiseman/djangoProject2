@@ -9,3 +9,15 @@ class Galerija(models.Model):
     date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     description = models.TextField(max_length=200, blank=True, null=True)
     image = CloudinaryField('image')
+
+
+    # sam menja url da ne mora svaki posebno
+    def get_absolute_url(self):
+        return f"/galerija/{self.id}/"
+
+
+    # def get_absolute_url(self):
+    #     return reverse("filmovi:filmovi_detail", kwargs={'id': self.id})
+
+    def __str__(self):
+        return self.title

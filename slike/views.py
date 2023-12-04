@@ -4,7 +4,9 @@ from .models import Galerija
 # Create your views here.
 def galerija(request):
 
-    context = {
+    slike = Galerija.objects.all()
 
+    context = {
+        'slike': slike
     }
     return render(request, 'slike.html', context)

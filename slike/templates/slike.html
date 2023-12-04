@@ -2,14 +2,25 @@
 
 {% load static %}
 
+{% block static %}
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/galerija.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block title %}
     Pocetna
 {% endblock %}
 
 
 {% block content %}
-    <h1 class="pocetna">Zdravo svete!</h1>
+    <h1 class="pocetna">Galerija</h1>
 
-{#    <h4>Dobrodosli na stranicu za serije i filmove sa prevodom</h4>#}
+    <section>
+
+        {% for slika in slike %}
+            <img src="{{ slika.image.url }}" alt="slika" class="slika">
+        {% endfor %}
+
+    </section>
 
 {% endblock %}

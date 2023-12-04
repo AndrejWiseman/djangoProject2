@@ -4,7 +4,7 @@ from .views import galerija
 app_name = 'slike'
 
 urlpatterns = [
-    path('', galerija, name='slike'),
+    path('', galerija, name='galerija'),
 
 
 ]
